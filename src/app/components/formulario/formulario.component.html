@@ -1,0 +1,44 @@
+<app-navbar logoColor="blue" crumbs="Inicio / Formulario" showProgramLogo="false"></app-navbar>
+<div class="row content w-100 m-0 bgf-purple">
+    <div class="col main pt-0 pt-md-3">
+        <div class="row pt-5">
+            <div class="col-6 col-md-2 mx-auto pt-4">
+                <img class="img-fluid" src="assets/images/form/header.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10 col-md-4 mx-auto">
+                <form class="formulario" #formulario="ngForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre<span *ngIf="nombreErrors && formulario.invalid" class="text-red"><small> (Al menos 3 caracteres)</small></span></label>
+                        <input type="text" class="form-control" name="nombre" [(ngModel)]="this.jugador.nombre" minlength="3" required [ngClass]="{'error': nombreErrors}">
+                    </div>
+                    <div class="form-group">
+                        <label for="cedula">Número de cédula<span *ngIf="cedulaErrors && formulario.invalid" class="text-red"><small> (Al menos 5 números)</small></span></label>
+                        <input type="text" class="form-control" name="cedula" [(ngModel)]="this.jugador.cedula" required minlength="5" [ngClass]="{'error': cedulaErrors}">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico<span *ngIf="correoErrors && formulario.invalid" class="text-red"><small> (formato no válido)</small></span></label>
+                        <input type="text" class="form-control" name="correo" [(ngModel)]="this.jugador.correo" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required [ngClass]="{'error': correoErrors}">
+                    </div>
+                    <div class="form-group">
+                        <label for="numero">Número de contacto<span *ngIf="numeroErrors && formulario.invalid" class="text-red"><small> (Al menos 10 números)</small></span></label>
+                        <input type="text" class="form-control" name="numero" [(ngModel)]="this.jugador.numero" required minlength="10" [ngClass]="{'error': numeroErrors}">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" name="acepto" [(ngModel)]="acepto">
+                        <label class="form-check-label" for="acepto">Acepto términos y condiciones<span *ngIf="aceptoErrors && formulario.invalid" class="text-red"><small> (Obligatorio)</small></span></label>
+                    </div>
+                    <div class="row">
+                        <div class="col-9 col-md-6 mx-auto">
+                            <!-- Válido -->
+                            <img *ngIf="formulario.valid && formulario.form.value.acepto" (click)="guardar( formulario )" class="img-fluid submit-img" src="assets/images/form/continuar-button.png">
+                            <!-- NO Válido -->
+                            <img *ngIf="formulario.invalid || !formulario.form.value.acepto" (click)="verificaForm( formulario )" class="img-fluid submit-img" src="assets/images/form/continuar-button-disabled.png">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

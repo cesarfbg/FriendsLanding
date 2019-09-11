@@ -1,0 +1,36 @@
+.formulario>div>label {
+    color: white !important;
+    padding-left: 20px !important;
+    margin-bottom: 0px !important;
+    font-family: "Kalam Bold" !important;
+}
+
+.formulario>div>input {
+    border-radius: 0px !important;
+}
+
+.form-check-label {
+    font-size: 12px !important;
+}
+
+.form-group {
+    margin-bottom: 7px !important;
+}
+
+a[type=submit] {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 20px;
+}
+
+.submit-img {
+    cursor: pointer;
+}
+
+.error {
+    border: 2px solid rgb(182, 21, 21) !important;
+}
+
+.text-red {
+    color: rgb(182, 21, 21) !important;
+}

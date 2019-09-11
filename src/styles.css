@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+.bgf-purple {
+    background-color: rgb(128, 114, 199);
+}
+
+.bgf-blue {
+    background-color: #1AA5DC;
+}
+
+.bgf-red {
+    background-color: rgb(230, 79, 58);
+}
+
+.content {
+    min-height: 100vh !important;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -999;
+    padding-bottom: 20px;
+}
+
+@font-face {
+    font-family: "Gotham Light Regular";
+    src: url('./assets/fonts/Gotham/Gotham/Gotham Light Regular.otf');
+}
+
+@font-face {
+    font-family: "Kalam Bold";
+    src: url('./assets/fonts/Kalam/Kalam Bold/Kalam-Bold.ttf');
+}
