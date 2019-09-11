@@ -14,6 +14,10 @@ body {
     background-color: rgb(230, 79, 58);
 }
 
+.bgf-yellow {
+  background-color: rgb(235, 193, 62);
+}
+
 .content {
     min-height: 100vh !important;
     position: absolute;

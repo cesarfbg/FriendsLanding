@@ -350,7 +350,7 @@ export class PreguntasComponent {
           this.resultado = 'joey';
           return;
         }
-        if ( i === 0) {
+        if ( i === 5) {
           this.resultado = 'rachel';
           return;
         }

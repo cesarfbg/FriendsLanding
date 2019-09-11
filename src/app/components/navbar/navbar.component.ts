@@ -9,6 +9,5 @@ export class NavbarComponent {
 
   @Input() logoColor: string;
   @Input() crumbs: string;
-  @Input() showProgramLogo: boolean;
 
 }
