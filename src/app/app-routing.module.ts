@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'inicio', component: InicioComponent},
   { path: 'formulario', component: FormularioComponent},
   { path: 'preguntas', component: PreguntasComponent},
-  { path: 'resultado', component: ResultadoComponent},
+  { path: 'resultado/:id', component: ResultadoComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'inicio'}
 ];
 

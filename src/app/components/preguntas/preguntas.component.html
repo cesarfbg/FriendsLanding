@@ -1,9 +1,32 @@
-<app-navbar logoColor="purple" crumbs="Inicio" showProgramLogo="false"></app-navbar>
-<div class="row content w-100 m-0 bgf-blue">
+<app-navbar logoColor="purple" crumbs="Inicio / Formulario / Preguntas" showProgramLogo="false"></app-navbar>
+<div class="row content w-100 m-0 bgf-red">
     <div class="col main">
-        <div class="row">
-            <div class="col-12 col-md-10 col-lg-8 mx-auto pt-5">
-                <h1>Preguntas</h1>
+        <div class="row pt-5 pt-md-3 animated bounceInRight fast">
+            <div class="col-8 mx-auto pt-5 text-center">
+                <img class="img-fluid pregunta" src="assets/images/questions/pregunta.png">
+            </div>
+        </div>
+        <div class="row text-center mt-3 animated bounceInLeft fast">
+            <div class="col-12 -col-md-10 col-lg-8 mx-auto">
+                <p class="question-title mb-2 mb-md-3">{{ preguntas[preguntaMostrada][0] }}</p>
+            </div>
+        </div>
+        <div class="row mt-3 mx-0 mx-lg-5 px-0 px-lg-5 animated fadeIn">
+            <div class="col-12 col-md-6 col-lg-4 text-center hoverable" (click)="seleccionarPregunta( idx )" *ngFor="let pregunta of this.preguntas[preguntaMostrada][1]; let idx = index;" [ngClass]="{'selected': preguntas[this.preguntaMostrada][3][idx]}">
+                <div class="row mb-3 mr-3">
+                    <div class="col-4">
+                        <img class="option img-fluid" [src]="'assets/images/questions/'+(idx + 1)+'.png'">
+                    </div>
+                    <div class="col-8 d-flex">
+                        <p class="question-text m-auto">{{ pregunta }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-2 animated bounceInUp fast">
+            <div class="col-10 col-md-3 mx-auto text-center">
+                <img class="img-fluid aceptar" src="assets/images/questions/aceptar.png" (click)="siguientePregunta()" [ngClass]="{'d-none': !unaSeleccionada, 'animated swing': unaSeleccionada}">
+                <img class="img-fluid" src="assets/images/questions/aceptar-disabled.png" [ngClass]="{'d-none': unaSeleccionada}">
             </div>
         </div>
     </div>

@@ -1,0 +1,43 @@
+.pregunta {
+    max-height: 100px !important;
+}
+
+.question-title {
+    font-family: 'Kalam Bold';
+    color: white;
+    font-size: 30px !important;
+}
+
+@media (max-width: 768px) {
+    .question-title {
+        font-family: 'Kalam Regular';
+        font-size: 20px !important;
+    }
+    .question-text {
+        font-size: 17px !important;
+    }
+}
+
+.option {
+    max-height: 80px !important;
+}
+
+.question-text {
+    font-family: 'Kalam Regular';
+    color: white;
+}
+
+.aceptar {
+    cursor: pointer;
+}
+
+.hoverable:hover {
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.selected {
+    border: 3px solid white !important;
+    border-radius: 20px !important;
+}
