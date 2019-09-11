@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class PreguntasComponent {
 
-  preguntaMostrada = 8;
+  preguntaMostrada = 0;
   preguntas: any[] = [
     [
       'Tu comida favorita es:',
