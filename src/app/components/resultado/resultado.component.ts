@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ResultadoComponent implements OnInit {
 
   resultado = '';
+  logoColor = 'purple';
 
   constructor( public activatedRoute: ActivatedRoute, public router: Router ) {}
 
@@ -20,6 +21,14 @@ export class ResultadoComponent implements OnInit {
     if (this.resultado !== 'Chandler' && this.resultado !== 'Phoebe' && this.resultado !== 'Monica' && this.resultado !== 'Ross' && this.resultado !== 'Joey' && this.resultado !== 'Rachel') {
       this.router.navigate(['inicio']);
     }
+    if (this.resultado === 'Rachel') {
+      this.logoColor = 'red';
+    }
+    if (this.resultado === 'Ross' || this.resultado === 'Chandler') {
+      this.logoColor = 'blue';
+    }
+
+
   }
 
   reiniciar() {

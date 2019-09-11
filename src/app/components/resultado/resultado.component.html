@@ -1,16 +1,18 @@
-<app-navbar logoColor="red" crumbs="Inicio / Formulario / Preguntas / Tu Personaje"></app-navbar>
-<div class="row content w-100 m-0 bgf-yellow">
+<app-navbar [logoColor]="logoColor" crumbs="Inicio / Formulario / Preguntas / Tu Personaje"></app-navbar>
+<div class="row content w-100 m-0"
+     [ngClass]="{'bgf-blue': resultado === 'Phoebe' || resultado === 'Monica',
+                'bgf-purple': resultado === 'Ross' || resultado === 'Chandler',
+                'bgf-red': resultado === 'Joey', 'bgf-yellow': resultado === 'Rachel'}">
     <div class="col main">
         <div class="row animated bounceInLeft fast pt-5">
             <div class="col-12 col-md-10 col-lg-8 mx-auto pt-5 text-center">
-                <img class="result img-fluid" src="assets/images/results/blank.png">
-                <p class="play-again m-0">{{ resultado }}</p>
+                <img class="result img-fluid" [src]="'assets/images/results/'+resultado+'.png'">
             </div>
         </div>
         <div class="row pt-3">
             <div class="col-6 text-center mx-auto">
-                    <p class="play-again m-0" (click)="reiniciar()">¡Volver a Jugar!</p>
-                </div>
+                <p class="play-again m-0" (click)="reiniciar()" [ngClass]="{'red-text': resultado === 'Rachel'}">¡Volver a Jugar!</p>
+            </div>
         </div>
     </div>
 </div>
