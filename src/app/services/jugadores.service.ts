@@ -15,10 +15,9 @@ export class JugadoresService {
     this.http.get(`https://friends-landing.firebaseio.com/${jugador.cedula}.json`)
       .subscribe( res => {
         if (res === null) {
-          this.http.post(`https://friends-landing.firebaseio.com/${jugador.cedula}.json`, jugador)
+          this.http.put(`https://friends-landing.firebaseio.com/${jugador.cedula}.json`, jugador)
             .subscribe( res2 => {
               // tslint:disable-next-line: no-string-literal
-              if (res2['name']) {
                 Swal.fire({
                   type: 'success',
                   title: 'Registro exitoso!',
@@ -26,7 +25,6 @@ export class JugadoresService {
                   timer: 1500
                 });
                 this.router.navigate(['preguntas']);
-              }
             }, err => {
               console.log(err);
             });
