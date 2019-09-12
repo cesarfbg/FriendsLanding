@@ -18,12 +18,28 @@ body {
   background-color: rgb(235, 193, 62);
 }
 
+.city {
+    background-image: url('assets/images/bg/bg.png');
+    background-repeat: no-repeat;
+    z-index: -999;
+    padding: 0px;
+    margin: 0px;
+    min-height: 50vh;
+    width: 600px;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: bottom;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
 .content {
     min-height: 100vh !important;
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: -999;
+    z-index: -10;
     padding-bottom: 20px;
 }
 
@@ -45,6 +61,10 @@ body {
 @font-face {
   font-family: "Kalam Regular";
   src: url('./assets/fonts/Kalam/Kalam Regular/Kalam-Regular.ttf');
+}
+
+.top {
+  z-index: 10 !important;
 }
 
 @-webkit-keyframes bounce {
