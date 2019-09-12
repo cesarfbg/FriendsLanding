@@ -295,7 +295,21 @@ export class PreguntasComponent {
   Joey = 0;
   Rachel = 0;
 
-  constructor( private router: Router ) {}
+  constructor( private router: Router ) {
+    let lista = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    lista = lista.sort( () => {
+      return Math.random() - 0.5;
+    });
+    const preguntasTemp = [];
+    preguntasTemp.push(this.preguntas[lista[0]]);
+    preguntasTemp.push(this.preguntas[lista[1]]);
+    preguntasTemp.push(this.preguntas[lista[2]]);
+    this.preguntas = preguntasTemp;
+  }
+
+  random( min: number, max: number ) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
 
   calcularResultado() {
     for (const pregunta of this.preguntas) {
@@ -359,7 +373,7 @@ export class PreguntasComponent {
   }
 
   siguientePregunta() {
-    if (this.preguntaMostrada === 9) {
+    if (this.preguntaMostrada === 2) {
       this.calcularResultado();
       this.router.navigate(['resultado', this.resultado]);
       return;

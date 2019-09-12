@@ -16,7 +16,6 @@ export class ResultadoComponent implements OnInit {
   ngOnInit() {
     this.resultado = this.activatedRoute.snapshot.params.id;
     this.resultado = this.resultado.charAt(0).toUpperCase() + this.resultado.slice(1).toLowerCase();
-    console.log(this.resultado);
     // tslint:disable-next-line: max-line-length
     if (this.resultado !== 'Chandler' && this.resultado !== 'Phoebe' && this.resultado !== 'Monica' && this.resultado !== 'Ross' && this.resultado !== 'Joey' && this.resultado !== 'Rachel') {
       this.router.navigate(['inicio']);
