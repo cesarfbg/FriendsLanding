@@ -34,3 +34,7 @@ a[type=submit] {
 .text-red {
     color: rgb(182, 21, 21) !important;
 }
+
+.smaller {
+    font-size: 10px !important;
+}

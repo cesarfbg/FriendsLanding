@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" name="acepto" [(ngModel)]="acepto">
-                        <label class="form-check-label" for="acepto">Acepto términos y condiciones<span *ngIf="aceptoErrors && formulario.invalid" class="text-red"><small> (Obligatorio)</small></span></label>
+                        <label class="form-check-label smaller" for="acepto" (click)="acepto = !acepto">Acepto y autorizo el uso de mis datos acá suministrados con fines publicitarios.<span *ngIf="aceptoErrors && formulario.invalid" class="text-red"><small> (Obligatorio)</small></span></label>
                     </div>
                     <div class="row">
                         <div class="col-9 col-md-6 mx-auto">
