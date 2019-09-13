@@ -31,6 +31,10 @@
     cursor: pointer;
 }
 
+.hoverable {
+    height: 120px !important;
+}
+
 .hoverable:hover {
     cursor: pointer;
     border: 1px solid white;
