@@ -4,6 +4,8 @@ export class Jugador {
     cedula: string;
     correo: string;
     numero: string;
+    fecha?: string;
+    timestamp?: number;
 
     constructor() {
         this.nombre = '';

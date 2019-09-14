@@ -15,6 +15,11 @@ export class JugadoresService {
     this.http.get(`https://friends-landing.firebaseio.com/${jugador.cedula}.json`)
       .subscribe( res => {
         if (res === null) {
+          const hoy = new Date();
+          let fecha = hoy.getDate() + '/' + (hoy.getMonth() + 1) + '/' + hoy.getFullYear();
+          fecha += ' - ' + hoy.getHours() + ':' +  hoy.getMinutes() + ':' + hoy.getSeconds();
+          jugador.fecha = fecha;
+          jugador.timestamp = hoy.getTime();
           this.http.put(`https://friends-landing.firebaseio.com/${jugador.cedula}.json`, jugador)
             .subscribe( res2 => {
               // tslint:disable-next-line: no-string-literal
